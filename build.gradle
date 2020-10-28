@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+def pluginGroup = 'com.github.viiictorxd.rogueclans'
+def pluginVersion = '1.0-SNAPSHOT'
+
+group pluginGroup
+version pluginVersion
+
+allprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+
+        implementation 'com.github.SaiintBrisson.command-framework:shared:1.0.0'
+        implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.0.0'
+
+        compileOnly 'org.projectlombok:lombok:1.18.16'
+        annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+        compileOnly fileTree(dir: 'libs', include: '*.jar')
+    }
+}
