@@ -18,7 +18,7 @@ public class RogueClans extends JavaPlugin {
         clanManager = new ClanManager();
         memberManager = new MemberManager();
 
-        Bukkit.getPluginManager().registerEvents(new MemberListener(), this);
+        Bukkit.getPluginManager().registerEvents(new MemberListener(this), this);
     }
 
     @Override
