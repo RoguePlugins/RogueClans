@@ -1,0 +1,12 @@
+messages:
+  member_has_clan: "&cEste jogador já é membro de um clã."
+
+  clan_command_create_usage: "&cUse /clan criar [tag] [nome]."
+
+  clan_tag_length_too_small: "&cA tag do clã precisa de no mínimo {0} caracteres."
+  clan_tag_length_too_big: "&cA tag do clã não pode ultrapassar {0} caracteres."
+  clan_name_length_too_small: "&cO nome do clã precisa de no mínimo {0} caracteres."
+  clan_name_length_too_big: "&cO nome do clã não pode ultrapassar {0} caracteres."
+  clan_that_tag_already_exists: "&cUm clã já se encontra utilizando esta tag."
+  clan_that_name_alredy_exists: "&cUm clã já se encontra utilizando este nome."
+  clan_created: "&aClã {0} {1} criado com sucesso."

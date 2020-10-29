@@ -157,4 +157,116 @@ public class Clan {
     public long getFounded() {
         return founded;
     }
+
+    public static class Builder {
+
+        private String tag;
+        private String coloredTag;
+        private String name;
+
+        private Set<Role> roles;
+        private Set<Member> members;
+        private Set<Notify> notifies;
+
+        private Map<String, Relation> relations;
+        private Map<Member, Invite> invites;
+
+        private Base base;
+        private League league;
+        private Level level;
+        private Counter counter;
+
+        private Inventory inventory;
+
+        private long founded;
+
+        public Builder setTag(String tag) {
+            this.tag = tag;
+            return this;
+        }
+
+        public Builder setColoredTag(String coloredTag) {
+            this.coloredTag = coloredTag;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setRoles(Set<Role> roles) {
+            this.roles = roles;
+            return this;
+        }
+
+        public Builder setMembers(Set<Member> members) {
+            this.members = members;
+            return this;
+        }
+
+        public Builder setNotifies(Set<Notify> notifies) {
+            this.notifies = notifies;
+            return this;
+        }
+
+        public Builder setRelations(Map<String, Relation> relations) {
+            this.relations = relations;
+            return this;
+        }
+
+        public Builder setInvites(Map<Member, Invite> invites) {
+            this.invites = invites;
+            return this;
+        }
+
+        public Builder setBase(Base base) {
+            this.base = base;
+            return this;
+        }
+
+        public Builder setLeague(League league) {
+            this.league = league;
+            return this;
+        }
+
+        public Builder setLevel(Level level) {
+            this.level = level;
+            return this;
+        }
+
+        public Builder setCounter(Counter counter) {
+            this.counter = counter;
+            return this;
+        }
+
+        public Builder setInventory(Inventory inventory) {
+            this.inventory = inventory;
+            return this;
+        }
+
+        public Builder setFounded(long founded) {
+            this.founded = founded;
+            return this;
+        }
+
+        public Clan asClan() {
+            return new Clan(
+                    tag,
+                    coloredTag,
+                    name,
+                    roles,
+                    members,
+                    notifies,
+                    relations,
+                    invites,
+                    base,
+                    league,
+                    level,
+                    counter,
+                    inventory,
+                    founded
+            );
+        }
+    }
 }

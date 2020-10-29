@@ -8,6 +8,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class RogueClans extends JavaPlugin {
 
+    private RogueMessages rogueMessages;
+
     public ClanManager clanManager;
     public MemberManager memberManager;
 

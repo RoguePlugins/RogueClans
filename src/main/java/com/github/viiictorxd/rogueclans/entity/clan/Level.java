@@ -2,19 +2,27 @@ package com.github.viiictorxd.rogueclans.entity.clan;
 
 public class Level {
 
-    private int position;
+    private int level;
     private int experience;
 
-    public Level(int position, int experience) {
-        this.position = position;
+    public Level(int level, int experience) {
+        this.level = level;
         this.experience = experience;
     }
 
-    public int getPosition() {
-        return position;
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getExperience() {
         return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 }
