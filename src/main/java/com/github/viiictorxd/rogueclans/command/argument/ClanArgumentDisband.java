@@ -47,6 +47,7 @@ public class ClanArgumentDisband {
             return;
         }
 
+
         /*
           Open inventory to confirm if really will delete clan
          */

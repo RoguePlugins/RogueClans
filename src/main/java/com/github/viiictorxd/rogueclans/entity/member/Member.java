@@ -105,4 +105,9 @@ public class Member {
         if (isOnline())
             getPlayer().sendMessage(message);
     }
+
+    public boolean isLeader() {
+        return role != null
+                && role.getPriority() == 1;
+    }
 }

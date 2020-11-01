@@ -82,6 +82,14 @@ public class Clan {
                 .findFirst();
     }
 
+    public Role getMainRole() {
+        return roles.stream()
+                .filter(role -> {
+                    return role.getPriority() == 1;
+                })
+                .findFirst().orElse(null);
+    }
+
     public Set<Member> getMembers() {
         return members;
     }

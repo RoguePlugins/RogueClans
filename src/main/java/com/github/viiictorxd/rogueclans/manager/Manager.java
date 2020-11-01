@@ -10,6 +10,10 @@ public class Manager<K, V> {
 
     protected Map<K, V> values = new HashMap<>();
 
+    public Map<K, V> getValues() {
+        return values;
+    }
+
     public V get(K key) {
         return values.getOrDefault(key, null);
     }
@@ -22,12 +26,12 @@ public class Manager<K, V> {
         return values.remove(key);
     }
 
-    public Collection<V> getValues() {
+    public Collection<V> getAll() {
         return values.values();
     }
 
     public Optional<V> found(Predicate<? super V> predicate) {
-        return getValues()
+        return getAll()
                 .stream()
                 .filter(predicate)
                 .findFirst();

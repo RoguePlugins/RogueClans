@@ -4,6 +4,8 @@ import com.github.viiictorxd.rogueclans.RogueClans;
 import com.github.viiictorxd.rogueclans.RogueConstants;
 import com.github.viiictorxd.rogueclans.RogueMessages;
 import com.github.viiictorxd.rogueclans.api.event.clan.ClanCreateEvent;
+import com.github.viiictorxd.rogueclans.api.event.member.MemberJoinClanEvent;
+import com.github.viiictorxd.rogueclans.api.event.member.MemberJoinRoleEvent;
 import com.github.viiictorxd.rogueclans.entity.clan.Base;
 import com.github.viiictorxd.rogueclans.entity.clan.Clan;
 import com.github.viiictorxd.rogueclans.entity.clan.Counter;
@@ -116,6 +118,14 @@ public class ClanArgumentCreate {
                 .asClan();
 
         new ClanCreateEvent(clan)
+                .callEvent();
+
+        member.setClan(clan);
+
+        new MemberJoinClanEvent(member, clan)
+                .callEvent();
+
+        new MemberJoinRoleEvent(member, null, clan.getMainRole())
                 .callEvent();
 
         context.sendMessage(rogueMessages.getMessage("clan_created", clan.getTag(), clan.getName()));
