@@ -1,9 +1,15 @@
 package com.github.viiictorxd.rogueclans.entity.clan;
 
+import lombok.AllArgsConstructor;
+
 public class Level {
 
     private int level;
     private int experience;
+
+    public Level() {
+        this(1, 0);
+    }
 
     public Level(int level, int experience) {
         this.level = level;
@@ -14,15 +20,7 @@ public class Level {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
     public int getExperience() {
         return experience;
-    }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
     }
 }

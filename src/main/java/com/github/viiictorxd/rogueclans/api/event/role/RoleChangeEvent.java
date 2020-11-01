@@ -20,4 +20,8 @@ public class RoleChangeEvent extends RoleEvent {
     public Object getNewValue() {
         return newValue;
     }
+
+    public boolean anyChange() {
+        return !oldValue.equals(newValue);
+    }
 }

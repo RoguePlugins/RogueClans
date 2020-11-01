@@ -3,6 +3,7 @@ package com.github.viiictorxd.rogueclans.command.argument;
 import com.github.viiictorxd.rogueclans.RogueClans;
 import com.github.viiictorxd.rogueclans.RogueConstants;
 import com.github.viiictorxd.rogueclans.RogueMessages;
+import com.github.viiictorxd.rogueclans.api.event.clan.ClanCreateEvent;
 import com.github.viiictorxd.rogueclans.entity.clan.Base;
 import com.github.viiictorxd.rogueclans.entity.clan.Clan;
 import com.github.viiictorxd.rogueclans.entity.clan.Counter;
@@ -37,17 +38,13 @@ public class ClanArgumentCreate {
 
     @Command(
             name = "clan.create",
-            aliases = {"criar"},
+            aliases = { "criar" },
 
             permission = "rogueclans.command.create",
 
             target = CommandTarget.PLAYER
     )
     public void onArgument(Context<Player> context) {
-        /*
-          Try to create a new clan
-         */
-
         Member member = memberManager.get(context.getSender().getUniqueId());
         if (member.hasClan()) {
             context.sendMessage(rogueMessages.getMessage("member_has_clan"));
@@ -105,18 +102,21 @@ public class ClanArgumentCreate {
                 .setTag(tag)
                 .setColoredTag(colorTag)
                 .setName(name)
-                .setRoles(Sets.newHashSet())
+                .setRoles(rogueConstants.getDefaultRoles())
                 .setMembers(Sets.newHashSet(member))
                 .setNotifies(Sets.newHashSet())
                 .setRelations(Maps.newHashMap())
                 .setInvites(Maps.newHashMap())
-                .setBase(new Base(null))
+                .setBase(null)
                 .setLeague(null /* get first league */)
-                .setLevel(new Level(1, 0))
-                .setCounter(new Counter(0, 0, 0))
+                .setLevel(new Level())
+                .setCounter(new Counter())
                 .setInventory(null)
                 .setFounded(System.currentTimeMillis())
                 .asClan();
+
+        new ClanCreateEvent(clan)
+                .callEvent();
 
         context.sendMessage(rogueMessages.getMessage("clan_created", clan.getTag(), clan.getName()));
     }

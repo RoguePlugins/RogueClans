@@ -1,5 +1,6 @@
 package com.github.viiictorxd.rogueclans.entity.clan;
 
+import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 

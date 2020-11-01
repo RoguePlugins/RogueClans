@@ -1,5 +1,9 @@
 messages:
-  member_has_clan: "&cEste jogador já é membro de um clã."
+  member_has_clan: "&cVocê é membro de um clã."
+  member_does_not_has_clan: "&cVocê não é membro de um clã."
+  member_does_not_leader: "&cVocê não é líder do clã."
+
+  you_are_leader: "&cVocê é líder e não pode abandonar o clã."
 
   clan_command_create_usage: "&cUse /clan criar [tag] [nome]."
 

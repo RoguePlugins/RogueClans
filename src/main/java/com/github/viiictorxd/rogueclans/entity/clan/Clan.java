@@ -134,6 +134,10 @@ public class Clan {
         return base;
     }
 
+    public boolean hasBase() {
+        return base != null;
+    }
+
     public League getLeague() {
         return league;
     }

@@ -6,6 +6,10 @@ public class Counter {
     private int gladiatorCount;
     private int pvpCount;
 
+    public Counter() {
+        this(0, 0, 0);
+    }
+
     public Counter(int memberCount, int gladiatorCount, int pvpCount) {
         this.memberCount = memberCount;
         this.gladiatorCount = gladiatorCount;

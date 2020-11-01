@@ -10,12 +10,13 @@ public class MysqlDatabase implements Database, DatabaseConnection<Connection> {
 
     private final DatabaseParemeters databaseParemeters;
     private final DatabaseType type;
-    private Connection connection;
 
     public MysqlDatabase(DatabaseParemeters databaseParemeters) {
         this.databaseParemeters = databaseParemeters;
         this.type = DatabaseType.MYSQL;
     }
+
+    private Connection connection;
 
     @Override
     public Connection getConnection() throws DatabaseException {

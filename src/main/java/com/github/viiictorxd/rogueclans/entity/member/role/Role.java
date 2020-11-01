@@ -73,4 +73,8 @@ public class Role {
     public boolean hasPermission(Permission permission) {
         return permissions.contains(permission);
     }
+
+    public boolean isNagatoWhenSpeakingAboutAkatsuki() {
+        return priority == 1;
+    }
 }

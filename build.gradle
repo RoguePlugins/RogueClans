@@ -9,29 +9,30 @@ def pluginVersion = '1.0-SNAPSHOT'
 group pluginGroup
 version pluginVersion
 
-allprojects {
-    apply plugin: 'java'
 
-    repositories {
-        mavenCentral()
-        mavenLocal()
+repositories {
+    mavenCentral()
+    mavenLocal()
 
-        maven {
-            url 'https://jitpack.io'
-        }
+    maven {
+        url 'https://jitpack.io'
     }
+}
 
-    dependencies {
-        testCompile group: 'junit', name: 'junit', version: '4.12'
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 
-        implementation 'com.github.DevNatan.inventory-framework:api:43074d61ba'
+    implementation 'com.github.DevNatan:inventory-framework:7ff68e7d00'
 
-        implementation 'com.github.SaiintBrisson.command-framework:shared:1.0.0'
-        implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.0.0'
+    implementation 'com.github.SaiintBrisson.command-framework:shared:1.0.0'
+    implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.0.0'
 
-        compileOnly 'org.projectlombok:lombok:1.18.16'
-        annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
-        compileOnly fileTree(dir: 'libs', include: '*.jar')
-    }
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+
+    compileOnly fileTree(
+            dir: 'libs',
+            include: '*.jar'
+    )
 }
