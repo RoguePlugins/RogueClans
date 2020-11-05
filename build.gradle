@@ -1,9 +1,9 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'me.johnrengelman.shadow' version '5.2.0'
 }
 
-def pluginGroup = 'com.github.viiictorxd.rogueclans'
+def pluginGroup = 'me.viiictorxd.rogueclans'
 def pluginVersion = '1.0-SNAPSHOT'
 
 group pluginGroup
@@ -22,10 +22,10 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
-    implementation 'com.github.DevNatan:inventory-framework:7ff68e7d00'
+    implementation 'me.DevNatan:inventory-framework:7ff68e7d00'
 
-    implementation 'com.github.SaiintBrisson.command-framework:shared:1.0.0'
-    implementation 'com.github.SaiintBrisson.command-framework:bukkit:1.0.0'
+    implementation 'me.SaiintBrisson.command-framework:shared:1.0.0'
+    implementation 'me.SaiintBrisson.command-framework:bukkit:1.0.0'
 
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
